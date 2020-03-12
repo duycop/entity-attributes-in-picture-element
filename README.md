@@ -1,12 +1,14 @@
 # entity-attributes-in-picture-element
 Show attributes of entity in picture-elements (HASS UI-LOVELACE)
 
-#syntax
+##syntax:
+```
 type: "custom:entity-attributes-in-picture-element"
 entity: (required)
 attrs: array of attr (required), each item : {attr, before, after}
-
-#json data:
+```
+##json data:
+```
 {
   "entity": "switch.xiaomi_powertrip",
   "type": "custom:entity-attributes-in-picture-element",
@@ -23,8 +25,9 @@ attrs: array of attr (required), each item : {attr, before, after}
     }
   ]
 }
-
-#yaml demo
+```
+##yaml demo:
+```
 entity: switch.xiaomi_powertrip
 type: custom:entity-attributes-in-picture-element
 attrs:
@@ -34,8 +37,9 @@ attrs:
 - attr: temperature
   before: ".&nbsp;"
   after: W
-
-#demo in ui-lovelace.yaml
+```
+##demo in ui-lovelace.yaml :
+```
       - type: picture-elements
         image: /local/images/my_home.png
         elements:
@@ -71,3 +75,4 @@ attrs:
             - attr: temperature
               before: '.&nbsp;'
               after: 'C'
+```
