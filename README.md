@@ -1,13 +1,13 @@
 # entity-attributes-in-picture-element
+## Instructions
 Show attributes of entity in picture-elements (HASS UI-LOVELACE)
-
-##syntax:
+### syntax in ui-lovelace:
 ```
 type: "custom:entity-attributes-in-picture-element"
 entity: (required)
 attrs: array of attr (required), each item : {attr, before, after}
 ```
-##json data:
+### json data:
 ```
 {
   "entity": "switch.xiaomi_powertrip",
@@ -21,24 +21,24 @@ attrs: array of attr (required), each item : {attr, before, after}
     {
       "attr": "temperature",
       "before": ".&nbsp;",
-      "after": "W"
+      "after": "°C"
     }
   ]
 }
 ```
-##yaml demo:
+### yaml demo:
 ```
 entity: switch.xiaomi_powertrip
 type: custom:entity-attributes-in-picture-element
 attrs:
 - attr: load_power
   before: ''
-  after: W
+  after: 'W'
 - attr: temperature
-  before: ".&nbsp;"
-  after: W
+  before: '.&nbsp;'
+  after: '°C'
 ```
-##demo in ui-lovelace.yaml :
+### demo in ui-lovelace.yaml :
 ```
       - type: picture-elements
         image: /local/images/my_home.png
@@ -74,5 +74,8 @@ attrs:
               after: 'W'
             - attr: temperature
               before: '.&nbsp;'
-              after: 'C'
+              after: '°C'
 ```
+### Tool convert
+  * https://www.json2yaml.com/
+  * https://onlineyamltools.com/convert-yaml-to-json
