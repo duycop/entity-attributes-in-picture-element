@@ -54,7 +54,7 @@ attrs:
               left: 59%
               top: 26%
               width: 40px
-              align: left
+              text-align: left
           - entity: switch.zimi_powerstrip
             type: "custom:entity-attributes-in-picture-element"
             attrs:
@@ -65,7 +65,8 @@ attrs:
               left: 92.5%
               top: 35%
               width: 40px
-              align: right
+              text-align: right
+              color: red
           - entity: switch.xiaomi_powertrip
             type: "custom:entity-attributes-in-picture-element"
             attrs:
