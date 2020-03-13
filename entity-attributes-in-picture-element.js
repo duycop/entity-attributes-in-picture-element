@@ -25,8 +25,9 @@ class EntityAttributesCard extends HTMLElement {
     this.config = config;
   }
 
-  _updateContent(element, value) {
+  _updateContent(element, value, title) {
     element.innerHTML = `${value}`;
+    element.title = `${title}`;
   }
 
   set hass(hass) {
@@ -34,15 +35,21 @@ class EntityAttributesCard extends HTMLElement {
     Object.keys(hass.states).sort().forEach(key => {
       if (key == this.config.entity) {
         var value = '';
+        var title = '';
         this.config.attrs.forEach(item => {
           var v = hass.states[key].attributes[item.attr];
           if (v) {
             value += item.before;
-            value += v;
+            value += (item.kalip===undefined)?v:Math.round(v*item.kalip);
             value += item.after;
+            
           } else value += '#'
+          title = hass.states[key].last_changed;
+          //console.info("======================================");
+          //console.info(key);
+          //for(var i in hass.states[key])console.info(i);
         });
-        this._updateContent(root.getElementById('attributes'), value);
+        this._updateContent(root.getElementById('attributes'), value, title);
       }
     });
   }
